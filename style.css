@@ -1,0 +1,127 @@
+@import url('https://fonts.googleapis.com/css2?family=Teko:wght@300;500;700&display=swap');
+
+body {
+    font-family: 'Teko', sans-serif;
+    margin: 0;
+    padding: 0;
+    background: linear-gradient(to bottom, #121212, #1a1a1a, #2a2a2a);
+    color: #ddd;
+    text-align: center;
+    overflow: hidden;
+}
+
+/* جعبه اصلی */
+.container {
+    width: 80%;
+    max-width: 1000px;
+    margin: 80px auto;
+    padding: 40px;
+    background: rgba(10, 10, 10, 0.9);
+    border-radius: 15px;
+    box-shadow: 0px 0px 50px rgba(20, 150, 80, 0.8);
+    animation: fadeIn 2s ease-in-out;
+}
+
+/* عنوان اصلی */
+h1 {
+    color: #4CAF50;
+    font-size: 4em;
+    margin-bottom: 10px;
+    text-shadow: 0 0 20px #4CAF50;
+}
+
+/* متن توضیحات */
+p {
+    font-size: 22px;
+    color: #bbb;
+    margin-bottom: 30px;
+}
+
+/* متن هایلایت شده */
+.highlight {
+    color: #4CAF50;
+    font-weight: bold;
+    text-shadow: 0 0 10px #4CAF50;
+}
+
+/* موشک هک */
+.rocket {
+    position: absolute;
+    bottom: -100px;
+    left: 50%;
+    width: 100px;
+    height: auto;
+    animation: rocketLaunch 5s infinite ease-in-out;
+}
+
+/* لوگوی جمهوری اسلامی */
+.logo {
+    position: absolute;
+    top: 15px;
+    left: 20px;
+    width: 80px;
+    height: auto;
+}
+
+/* جعبه تماس با ما */
+.contact {
+    margin-top: 40px;
+    padding: 25px;
+    background-color: rgba(40, 40, 40, 0.9);
+    border-radius: 12px;
+    box-shadow: 0 0 20px rgba(76, 175, 80, 0.6);
+}
+
+/* عنوان بخش تماس */
+.contact h2 {
+    font-size: 2em;
+    margin-bottom: 15px;
+    color: #4CAF50;
+    text-shadow: 0 0 10px #4CAF50;
+}
+
+/* لینک ها */
+a {
+    color: #4CAF50;
+    text-decoration: none;
+    font-weight: bold;
+    font-size: 22px;
+    transition: transform 0.3s ease;
+}
+
+a:hover {
+    transform: scale(1.1);
+    text-decoration: underline;
+}
+
+/* دکمه تماس */
+.contact-button {
+    display: inline-block;
+    padding: 15px 40px;
+    background-color: #4CAF50;
+    color: white;
+    font-size: 22px;
+    font-weight: bold;
+    border-radius: 15px;
+    text-decoration: none;
+    margin-top: 25px;
+    transition: background-color 0.3s ease, transform 0.3s ease;
+}
+
+.contact-button:hover {
+    background-color: #2e7d32;
+    transform: scale(1.1);
+}
+
+/* افکت محو شدن */
+@keyframes fadeIn {
+    from { opacity: 0; transform: translateY(-50px); }
+    to { opacity: 1; transform: translateY(0); }
+}
+
+/* انیمیشن پرتاب موشک */
+@keyframes rocketLaunch {
+    0% { transform: translateY(0); }
+    50% { transform: translateY(-30px); }
+    100% { transform: translateY(0); }
+}
