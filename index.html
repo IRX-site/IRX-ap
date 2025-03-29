@@ -1,143 +1,130 @@
-<!DOCTYPE html>
-<html lang="fa">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>IRX - قدرت نوین اقتصادی ایران</title>
-    <style>
-        @import url('https://fonts.googleapis.com/css2?family=Teko:wght@300;500;700&display=swap');
+‏<!DOCTYPE html>
+‏<html lang="fa">
+‏<head>
+‏    <meta charset="UTF-8">
+‏    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+‏    <meta name="description" content="IRX پروژه‌ای است که ریال ایران را جهانی کرده و آن را وارد بازار فارکس و صرافی‌های بین‌المللی می‌کند.">
+‏    <meta name="keywords" content="IRX, ریال ایران, بلاکچین, کریپتو, فارکس, اقتصاد ایران">
+‏    <meta name="author" content="IRX Team">
+‏    <title>IRX - آینده اقتصاد ایران</title>
+    
+    <!-- لینک فونت و آیکون -->
+‏    <link href="https://fonts.googleapis.com/css2?family=Raleway:wght@300;700&display=swap" rel="stylesheet">
 
-        body {
-            font-family: 'Teko', sans-serif;
-            margin: 0;
-            padding: 0;
-            background: linear-gradient(to bottom, #121212, #1a1a1a, #2a2a2a);
-            color: #ddd;
-            text-align: center;
-            overflow: hidden;
+‏    <style>
+        /* استایل کلی */
+‏        body {
+‏            font-family: 'Raleway', sans-serif;
+‏            text-align: center;
+‏            background-color: #121212;
+‏            color: #fff;
+‏            margin: 0;
+‏            padding: 0;
         }
 
-        .container {
-            width: 80%;
-            max-width: 1000px;
-            margin: 80px auto;
-            padding: 40px;
-            background: rgba(10, 10, 10, 0.9);
-            border-radius: 15px;
-            box-shadow: 0px 0px 50px rgba(20, 150, 80, 0.8);
-            animation: fadeIn 2s ease-in-out;
+        /* انیمیشن لودینگ */
+‏        .loader {
+‏            width: 100vw;
+‏            height: 100vh;
+‏            background: #000;
+‏            display: flex;
+‏            justify-content: center;
+‏            align-items: center;
+‏            position: fixed;
+‏            z-index: 9999;
+‏            animation: fadeOut 3s forwards;
         }
 
-        h1 {
-            color: #4CAF50;
-            font-size: 4em;
-            margin-bottom: 10px;
-            text-shadow: 0 0 20px #4CAF50;
+‏        .loader img {
+‏            width: 150px;
+‏            height: 150px;
+‏            animation: spin 2s linear infinite;
         }
 
-        p {
-            font-size: 22px;
-            color: #bbb;
-            margin-bottom: 30px;
+‏        @keyframes spin {
+‏            0% { transform: rotate(0deg); }
+‏            100% { transform: rotate(360deg); }
         }
 
-        .highlight {
-            color: #4CAF50;
-            font-weight: bold;
-            text-shadow: 0 0 10px #4CAF50;
+‏        @keyframes fadeOut {
+‏            0% { opacity: 1; }
+‏            100% { opacity: 0; visibility: hidden; }
         }
 
-        .rocket {
-            position: absolute;
-            bottom: -100px;
-            left: 50%;
-            width: 100px;
-            height: auto;
-            animation: rocketLaunch 5s infinite ease-in-out;
+        /* استایل هدر */
+‏        header {
+‏            background-color: #1c1c1c;
+‏            padding: 20px;
+‏            font-size: 24px;
+‏            font-weight: bold;
+‏            border-bottom: 2px solid #00c853;
         }
 
-        .logo {
-            position: absolute;
-            top: 15px;
-            left: 20px;
-            width: 80px;
-            height: auto;
+        /* متن اصلی */
+‏        .content {
+‏            padding: 50px;
+‏            font-size: 20px;
+‏            max-width: 800px;
+‏            margin: auto;
         }
 
-        .contact {
-            margin-top: 40px;
-            padding: 25px;
-            background-color: rgba(40, 40, 40, 0.9);
-            border-radius: 12px;
-            box-shadow: 0 0 20px rgba(76, 175, 80, 0.6);
+        /* عکس اصلی */
+‏        .image-container {
+‏            margin-top: 30px;
         }
 
-        .contact h2 {
-            font-size: 2em;
-            margin-bottom: 15px;
-            color: #4CAF50;
-            text-shadow: 0 0 10px #4CAF50;
+‏        .image-container img {
+‏            width: 300px;
+‏            border-radius: 10px;
+‏            box-shadow: 0px 0px 20px rgba(0, 255, 127, 0.6);
         }
 
-        a {
-            color: #4CAF50;
-            text-decoration: none;
-            font-weight: bold;
-            font-size: 22px;
-            transition: transform 0.3s ease;
+        /* دکمه ها */
+‏        .btn {
+‏            background-color: #00c853;
+‏            color: #fff;
+‏            padding: 15px 30px;
+‏            border: none;
+‏            font-size: 18px;
+‏            margin-top: 20px;
+‏            border-radius: 5px;
+‏            cursor: pointer;
+‏            transition: 0.3s;
         }
 
-        a:hover {
-            transform: scale(1.1);
-            text-decoration: underline;
+‏        .btn:hover {
+‏            background-color: #007a3d;
         }
+‏    </style>
+‏</head>
+‏<body>
 
-        .contact-button {
-            display: inline-block;
-            padding: 15px 40px;
-            background-color: #4CAF50;
-            color: white;
-            font-size: 22px;
-            font-weight: bold;
-            border-radius: 15px;
-            text-decoration: none;
-            margin-top: 25px;
-            transition: background-color 0.3s ease, transform 0.3s ease;
-        }
+    <!-- انیمیشن لودینگ -->
+‏    <div class="loader">
+‏        <img src="https://upload.wikimedia.org/wikipedia/commons/e/eb/Iran_emblem.svg" alt="IRX Loading">
+‏    </div>
 
-        .contact-button:hover {
-            background-color: #2e7d32;
-            transform: scale(1.1);
-        }
+    <!-- هدر سایت -->
+‏    <header>
+‏        IRX - آینده‌ای جدید برای ریال ایران
+‏    </header>
 
-        @keyframes fadeIn {
-            from { opacity: 0; transform: translateY(-50px); }
-            to { opacity: 1; transform: translateY(0); }
-        }
+    <!-- محتوای سایت -->
+‏    <div class="content">
+‏        <h1>پروژه‌ای که ریال ایران را جهانی می‌کند</h1>
+‏        <p>
+            این پروژه ریال ایران را جهانی می‌کند و به بازار فارکس و صرافی‌های معتبر بین‌المللی وارد می‌کند.  
+            با این کار، ارزش ریال ایران <strong>روز به روز افزایش</strong> پیدا کرده و اقتصاد ایران  
+‏            <strong>قدرتمندتر از همیشه خواهد شد</strong>.
+‏        </p>
 
-        @keyframes rocketLaunch {
-            0% { transform: translateY(0); }
-            50% { transform: translateY(-30px); }
-            100% { transform: translateY(0); }
-        }
+        <!-- عکس مهم -->
+‏        <div class="image-container">
+‏            <img src="B6DB093A-4E17-4FC5-AEAC-4F6B29AFA90F.jpeg" alt="IRX Coin">
+‏        </div>
 
-    </style>
-</head>
-<body>
+‏        <button class="btn">بیشتر بدانید</button>
+‏    </div>
 
-    <img src="https://example.com/rocket.png" class="rocket" alt="موشک">
-    <img src="https://example.com/islami_logo.png" class="logo" alt="نماد جمهوری اسلامی">
-
-    <div class="container">
-        <h1>🚀 IRX - آینده اقتصاد ایران</h1>
-        <p>
-            این پروژه <span class="highlight">ریال ایران</span> را جهانی می‌کند و به <span class="highlight">بازار فارکس</span> و <span class="highlight">صرافی‌های معتبر بین‌المللی</span> وارد می‌کند.  
-            با این کار، ارزش ریال ایران **روز به روز افزایش** پیدا کرده و اقتصاد ایران **قدرتمندتر از همیشه خواهد شد.**
-        </p>
-
-        <div class="contact">
-            <h2>تماس با ما</h2>
-            <p>📞 <a href="tel:09222112369">09222112369</a></p>
-            <a href="tel:09222112369" class="contact-button">ارتباط مستقیم</a>
-        </div>
-    </
+‏</body>
+‏</html>
