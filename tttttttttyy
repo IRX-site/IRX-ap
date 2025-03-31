@@ -1,0 +1,286 @@
+<!DOCTYPE html>
+<html lang="fa" dir="rtl">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="پروژه IRX - انقلاب مالی ایران برای قدرتمند کردن ریال ایران">
+    <meta name="keywords" content="IRX, ارز دیجیتال, اقتصاد ایران, ریال ایران">
+    <title>IRX - انقلاب مالی ایران | قدرتمندترین پول دنیا</title>
+    <link href="https://fonts.googleapis.com/css2?family=Vazirmatn:wght@100;300;400;500;700;900&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <style>
+        :root {
+            --primary-color: #FFD700;
+            --secondary-color: #B8860B;
+            --dark-bg: #1a1a1a;
+            --text-color: #ffffff;
+            --hover-color: #FFC000;
+            --shadow: 0 0 15px rgba(255, 215, 0, 0.5);
+            --transition: all 0.3s ease;
+        }
+
+        body {
+            font-family: 'Vazirmatn', sans-serif;
+            background-color: var(--dark-bg);
+            color: var(--text-color);
+            line-height: 1.6;
+            position: relative;
+            min-height: 100vh;
+            overflow-x: hidden;
+        }
+
+        /* ... (کدهای CSS قبلی) ... */
+    </style>
+</head>
+<body>
+    <div class="stars"></div>
+    <div class="azadi-monument">
+        <i class="fas fa-monument"></i>
+    </div>
+    <div class="right-side">
+        <div class="side-clock" id="sideClock"></div>
+        <div class="irx-logo">IRX</div>
+    </div>
+    <header>
+        <div class="logo">IRX</div>
+        <div class="subtitle">انقلاب مالی ایران - قدرتمندترین پول دنیا</div>
+    </header>
+    <div class="menu-toggle" id="menuToggle">
+        <span></span>
+        <span></span>
+        <span></span>
+    </div>
+    <nav class="main-menu" id="mainMenu">
+        <a href="#home"><i class="fas fa-home"></i> خانه</a>
+        <a href="#about"><i class="fas fa-info-circle"></i> درباره ما</a>
+        <a href="#irx"><i class="fas fa-coins"></i> پروژه IRX</a>
+        <a href="#roadmap"><i class="fas fa-map-marked-alt"></i> نقشه راه</a>
+        <a href="#team"><i class="fas fa-users"></i> تیم ما</a>
+        <a href="#contact"><i class="fas fa-envelope"></i> تماس با ما</a>
+        <a href="#faq"><i class="fas fa-question-circle"></i> سوالات متداول</a>
+    </nav>
+    <div class="clock-container">
+        <div class="analog-clock">
+            <div class="clock-hand hour-hand" id="hourHand"></div>
+            <div class="clock-hand minute-hand" id="minuteHand"></div>
+            <div class="clock-hand second-hand" id="secondHand"></div>
+        </div>
+        <div class="digital-clock" id="digitalClock"></div>
+    </div>
+    <div class="crypto-widget">
+        <h3><i class="fas fa-chart-line"></i> قیمت ارزهای دیجیتال</h3>
+        <div class="crypto-item">
+            <div class="crypto-name">
+                <img src="https://cryptologos.cc/logos/bitcoin-btc-logo.png" alt="Bitcoin" class="crypto-icon">
+                <span>بیت‌کوین</span>
+            </div>
+            <div class="crypto-price" id="btcPrice">در حال بارگذاری...</div>
+        </div>
+        <div class="crypto-item">
+            <div class="crypto-name">
+                <img src="https://cryptologos.cc/logos/ethereum-eth-logo.png" alt="Ethereum" class="crypto-icon">
+                <span>اتریوم</span>
+            </div>
+            <div class="crypto-price" id="ethPrice">در حال بارگذاری...</div>
+        </div>
+        <div class="crypto-item">
+            <div class="crypto-name">
+                <img src="https://cryptologos.cc/logos/litecoin-ltc-logo.png" alt="Litecoin" class="crypto-icon">
+                <span>لایت‌کوین</span>
+            </div>
+            <div class="crypto-price" id="ltcPrice">در حال بارگذاری...</div>
+        </div>
+        <div class="crypto-item">
+            <div class="crypto-name">
+                <i class="fas fa-star crypto-icon" style="color: var(--primary-color);"></i>
+                <span>IRX</span>
+            </div>
+            <div class="crypto-price" style="color: var(--primary-color);">به زودی...</div>
+        </div>
+    </div>
+    <main class="main-content">
+        <article>
+            <h2>پروژه IRX چیست؟</h2>
+            <p>IRX یک ارز دیجیتال غیرمتمرکز و مبتنی بر فناوری بلاکچین است که با هدف تقویت اقتصاد ایران و ایجاد یک سیستم مالی شفاف و کارآمد طراحی شده است. این پروژه با ارائه راهکارهای نوین در حوزه پرداخت‌ها، سرمایه‌گذاری و تجارت، به دنبال ایجاد تحولی اساسی در اقتصاد ایران است.</p>
+            <p>IRX قراره که ریال ایران رو قدرت مند کنه و اقتصاد کشورمون رو بهتر و بهتر کنه،ما ریال ایران رو به IRX وابسته میکنیم و در این صورت وقتی که ارزش irx افزایش پیدا کرد قیمت ریال هم افزایش پیدا میکنه ما قراره که IRX رو در صرافی های بین المللی ثبت کنیم و کم کم وارد بازار هایی همچون فارکس ارتقا بدیم و در همین حال ریال ایران با IRX افزایش پیدا میکنه و قدرتمند خواهد شد و در این صورت مشکلات اقتصادی کشور محو خواهد شد این یک طرح و پروژه نو اورانه و یک فرصت بسیار بسیار ارزشمند برای ایران هست. این پروژه هنوز شروع به فعالیت نکرده.</p>
+            <h2>مزایای IRX برای اقتصاد ایران</h2>
+            <ul style="margin-bottom: 1.5rem; padding-right: 1.5rem;">
+                <li>**کاهش وابستگی به دلار:** IRX با ایجاد یک سیستم مالی مستقل، به کاهش وابستگی اقتصاد ایران به دلار آمریکا کمک می‌کند.</li>
+                <li>**افزایش شفافیت:** استفاده از فناوری بلاکچین، شفافیت در معاملات مالی را افزایش داده و از فساد و پولشویی جلوگیری می‌کند.</li>
+                <li>**تسهیل تجارت بین‌المللی:** IRX با ارائه یک راهکار پرداخت سریع و امن، تجارت بین‌المللی را برای کسب‌وکارهای ایرانی تسهیل می‌کند.</li>
+                <li>**جذب سرمایه‌گذاری خارجی:** IRX با ایجاد یک بازار سرمایه شفاف و جذاب، سرمایه‌گذاران خارجی را به اقتصاد ایران جذب می‌کند.</li>
+                <li>**ایجاد فرصت‌های شغلی جدید:** توسعه پروژه IRX، فرصت‌های شغلی جدیدی را در حوزه فناوری و مالی ایجاد می‌کند.</li>
+            </ul>
+        </article>
+    </main>
+    <aside class="news-ticker">
+        <h3><i class="fas fa-newspaper"></i> آخرین اخبار</h3>
+        <div class="news-item">توسعه پروژه IRX: فاز اول توسعه پلتفرم با موفقیت به پایان رسید.</div>
+        <div class="news-item">همکاری‌های بین‌المللی: مذاکرات با چندین کشور برای پذیرش IRX در جریان است.</div>
+        <div class="news-item">اقتصاد ایران: رشد چشمگیر صادرات غیرنفتی در سه ماهه اخیر.</div>
+    </aside>
+    <div class="back-to-top" id="backToTop">
+        <i class="fas fa-arrow-up"></i>
+    </div>
+    <footer>
+        <div class="footer-content">
+            <div class="social-links">
+                <a href="#" aria-label="Telegram"><i class="fab fa-telegram"></i></a>
+                <a href="#" aria-label="Twitter"><i class="fab fa-twitter"></i></a>
+                <a href="#" aria-label="Instagram"><i class="fab fa-instagram"></i></a>
+                <a href="#" aria-label="LinkedIn"><i class="fab fa-linkedin"></i></a>
+                <a href="#" aria-label="Github"><i class="fab fa-github"></i></a>
+            </div>
+            <div class="copyright">
+                © 2023 پروژه IRX - تمامی حقوق محفوظ است
+            </div>
+        </div>
+    </footer>
+    <script>
+        // منوی همبرگری
+        const menuToggle = document.getElementById('menuToggle');
+        const mainMenu = document.getElementById('mainMenu');
+
+        menuToggle.addEventListener('click', () => {
+            menuToggle.classList.toggle('active');
+            mainMenu.classList.toggle('active');
+        });
+
+        document.addEventListener('click', (e) => {
+            if (!mainMenu.contains(e.target) && !menuToggle.contains(e.target)) {
+                menuToggle.classList.remove('active');
+                mainMenu.classList.remove('active');
+            }
+        });
+
+        // ساعت آنالوگ و دیجیتال
+        function updateClock() {
+            const now = new Date();
+            const hours = now.getHours();
+            const minutes = now.getMinutes();
+            const seconds = now.getSeconds();
+
+            // ساعت آنالوگ
+            const hourDeg = (hours % 12) * 30 + (minutes / 2);
+            const minuteDeg = minutes * 6;
+            const secondDeg = seconds * 6;
+
+            document.getElementById('hourHand').style.transform = `rotate(${hourDeg}deg)`;
+            document.getElementById('minuteHand').style.transform = `rotate(${minuteDeg}deg)`;
+            document.getElementById('secondHand').style.transform = `rotate(${secondDeg}deg)`;
+
+            // ساعت دیجیتال
+            const formattedTime =
+                `${hours.toString().padStart(2, '0')}:${minutes.toString().padStart(2, '0')}:${seconds.toString().padStart(2, '0')}`;
+            document.getElementById('digitalClock').textContent = formattedTime;
+            document.getElementById('sideClock').textContent = formattedTime;
+        }
+
+        setInterval(updateClock, 1000);
+        updateClock(); // فراخوانی اولیه
+
+        // دریافت قیمت ارزهای دیجیتال
+        async function fetchCryptoPrices() {
+            try {
+                const response = await fetch('https://api.coingecko.com/api/v3/simple/price?ids=bitcoin,ethereum,litecoin&vs_currencies=usd&include_24hr_change=true');
+                const data = await response.json();
+
+                document.getElementById('btcPrice').textContent = `$${data.bitcoin.usd.toLocaleString()}`;
+                document.getElementById('ethPrice').textContent = `$${data.ethereum.usd.toLocaleString()}`;
+                document.getElementById('ltcPrice').textContent = `$${data.litecoin.usd.toLocaleString()}`;
+
+                // اضافه کردن کلاس برای تغییرات قیمت
+                if (data.bitcoin.usd_24h_change > 0) {
+                    document.getElementById('btcPrice').classList.add('positive');
+                } else {
+                    document.getElementById('btcPrice').classList.add('negative');
+                }
+
+                if (data.ethereum.usd_24h_change > 0) {
+                    document.getElementById('ethPrice').classList.add('positive');
+                } else {
+                    document.getElementById('ethPrice').classList.add('negative');
+                }
+
+                if (data.litecoin.usd_24h_change > 0) {
+                    document.getElementById('ltcPrice').classList.add('positive');
+                } else {
+                    document.getElementById('ltcPrice').classList.add('negative');
+                }
+            } catch (error) {
+                console.error('خطا در دریافت قیمت ارزها:', error);
+                document.getElementById('btcPrice').textContent = 'خطا در بارگذاری';
+                document.getElementById('ethPrice').textContent = 'خطا در بارگذاری';
+                document.getElementById('ltcPrice').textContent = 'خطا در بارگذاری';
+            }
+        }
+
+        fetchCryptoPrices();
+        setInterval(fetchCryptoPrices, 1000); // به‌روزرسانی هر 1 ثانیه
+
+        // دکمه بازگشت به بالا
+        const backToTop = document.getElementById('backToTop');
+
+        window.addEventListener('scroll', () => {
+            if (window.pageYOffset > 300) {
+                backToTop.classList.add('visible');
+            } else {
+                backToTop.classList.remove('visible');
+            }
+        });
+
+        backToTop.addEventListener('click', () => {
+            window.scrollTo({
+                top: 0,
+                behavior: 'smooth'
+            });
+        });
+
+        // اسکرول نرم برای لینک‌ها
+        document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+            anchor.addEventListener('click', function(e) {
+                e.preventDefault();
+
+                const targetId = this.getAttribute('href');
+                if (targetId === '#') return;
+
+                const targetElement = document.querySelector(targetId);
+                if (targetElement) {
+                    targetElement.scrollIntoView({
+                        behavior: 'smooth'
+                    });
+
+                    // بستن منو در حالت موبایل
+                    menuToggle.classList.remove('active');
+                    mainMenu.classList.remove('active');
+                }
+            });
+        });
+
+        // انیمیشن‌های اسکرول
+        const animateOnScroll = () => {
+            const elements = document.querySelectorAll('.main-content, .crypto-widget, .news-ticker');
+
+            elements.forEach(element => {
+                const elementPosition = element.getBoundingClientRect().top;
+                const screenPosition = window.innerHeight / 1.3;
+
+                if (elementPosition < screenPosition) {
+                    element.style.opacity = '1';
+                    element.style.transform = 'translateY(0)';
+                }
+            });
+        };
+
+        // تنظیم حالت اولیه برای عناصر
+        document.querySelectorAll('.main-content, .crypto-widget, .news-ticker').forEach(element => {
+            element.style.opacity = '0';
+            element.style.transform = 'translateY(20px)';
+            element.style.transition = 'opacity 0.5s ease, transform 0.5s ease';
+        });
+
+        window.addEventListener('scroll', animateOnScroll);
+        window.addEventListener('load', animateOnScroll);
+    </script>
+</body>
+</html>
