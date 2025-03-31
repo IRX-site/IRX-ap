@@ -1,0 +1,691 @@
+<!DOCTYPE html>
+<html lang="fa" dir="rtl">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="پروژه IRX - انقلاب مالی ایران برای قدرتمند کردن ریال ایران">
+    <meta name="keywords" content="IRX, ارز دیجیتال, اقتصاد ایران, ریال ایران">
+    <meta name="author" content="تیم IRX">
+    <meta name="robots" content="index, follow">
+    <title>IRX - انقلاب مالی ایران | قدرتمندترین پول دنیا</title>
+    
+    <!-- فونت Vazirmatn -->
+    <link href="https://fonts.googleapis.com/css2?family=Vazirmatn:wght@100;300;400;500;700;900&display=swap" rel="stylesheet">
+    
+    <!-- آیکون‌های Font Awesome -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    
+    <style>
+        :root {
+            --primary-color: #FFD700;
+            --secondary-color: #B8860B;
+            --dark-bg: #1a1a1a;
+            --text-color: #ffffff;
+            --hover-color: #FFC000;
+            --shadow: 0 0 15px rgba(255, 215, 0, 0.5);
+            --transition: all 0.3s ease;
+        }
+        
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+        
+        body {
+            font-family: 'Vazirmatn', sans-serif;
+            background-color: var(--dark-bg);
+            color: var(--text-color);
+            line-height: 1.6;
+            min-height: 100vh;
+            overflow-x: hidden;
+        }
+        
+        .stars {
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background: url('https://www.transparenttextures.com/patterns/starfield.png');
+            animation: moveStars 100s linear infinite;
+            z-index: -1;
+        }
+        
+        @keyframes moveStars {
+            from { background-position: 0 0; }
+            to { background-position: -2000px 1000px; }
+        }
+        
+        header {
+            background: linear-gradient(135deg, var(--primary-color), var(--secondary-color));
+            padding: 1.5rem;
+            text-align: center;
+            box-shadow: var(--shadow);
+            z-index: 10;
+            position: sticky;
+            top: 0;
+        }
+        
+        .logo {
+            font-size: 2.5rem;
+            font-weight: 900;
+            color: #000;
+            text-shadow: 2px 2px 10px rgba(255, 255, 255, 0.8);
+        }
+        
+        .subtitle {
+            font-size: 1.1rem;
+            color: var(--text-color);
+            font-weight: 500;
+        }
+        
+        .azadi-monument {
+            position: fixed;
+            top: 1.5rem;
+            left: 1.5rem;
+            font-size: 3rem;
+            color: var(--primary-color);
+            z-index: 10;
+            animation: pulse 2s infinite;
+        }
+        
+        .right-side {
+            position: fixed;
+            top: 6rem;
+            left: 1.5rem;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            gap: 0.5rem;
+            z-index: 5;
+        }
+        
+        .side-clock {
+            background: rgba(0, 0, 0, 0.7);
+            padding: 0.5rem 1rem;
+            border-radius: 0.5rem;
+            border: 1px solid var(--primary-color);
+            font-weight: 500;
+        }
+        
+        .irx-logo {
+            font-size: 1.5rem;
+            font-weight: 900;
+            color: var(--primary-color);
+            text-shadow: 0 0 10px rgba(255, 215, 0, 0.5);
+        }
+        
+        .menu-toggle {
+            position: absolute;
+            top: 1.5rem;
+            left: 1.5rem;
+            width: 2.5rem;
+            height: 2rem;
+            display: flex;
+            flex-direction: column;
+            justify-content: space-between;
+            cursor: pointer;
+            z-index: 100;
+            transition: var(--transition);
+        }
+        
+        .menu-toggle:hover {
+            transform: scale(1.1);
+        }
+        
+        .menu-toggle span {
+            width: 100%;
+            height: 0.25rem;
+            background-color: var(--text-color);
+            border-radius: 0.25rem;
+            transition: var(--transition);
+        }
+        
+        .menu-toggle.active span:nth-child(1) {
+            transform: translateY(0.75rem) rotate(45deg);
+        }
+        
+        .menu-toggle.active span:nth-child(2) {
+            opacity: 0;
+        }
+        
+        .menu-toggle.active span:nth-child(3) {
+            transform: translateY(-0.75rem) rotate(-45deg);
+        }
+        
+        .main-menu {
+            position: fixed;
+            top: 0;
+            right: -300px;
+            width: 300px;
+            height: 100%;
+            background-color: rgba(26, 26, 26, 0.95);
+            -webkit-backdrop-filter: blur(10px);
+            backdrop-filter: blur(10px);
+            padding: 5rem 1.5rem;
+            transition: var(--transition);
+            z-index: 90;
+            overflow-y: auto;
+        }
+        
+        .main-menu.active {
+            right: 0;
+            box-shadow: -5px 0 15px rgba(0, 0, 0, 0.5);
+        }
+        
+        .main-menu a {
+            display: block;
+            padding: 1rem;
+            color: var(--text-color);
+            text-decoration: none;
+            font-size: 1.2rem;
+            border-bottom: 1px solid rgba(184, 134, 11, 0.3);
+            transition: var(--transition);
+        }
+        
+        .main-menu a:hover {
+            color: var(--primary-color);
+            background-color: rgba(255, 215, 0, 0.1);
+            padding-right: 1.5rem;
+        }
+        
+        .clock-container {
+            position: absolute;
+            top: 1.5rem;
+            left: 1.5rem;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            gap: 0.5rem;
+        }
+        
+        .analog-clock {
+            width: 5rem;
+            height: 5rem;
+            background-color: rgba(51, 51, 51, 0.8);
+            border-radius: 50%;
+            position: relative;
+            box-shadow: 0 0 15px var(--primary-color);
+            border: -mediawiki-skin-variablepx solid var(--primary-color);
+        }
+        
+        .analog-clock::before {
+            content: '';
+            position: absolute;
+            width: 0.5rem;
+            height: 0.5rem;
+            background-color: var(--text-color);
+            border-radius: 50%;
+            top: 50%;
+            left: 50%;
+            transform: translate(-50%, -50%);
+            z-index: 10;
+        }
+        
+        .clock-hand {
+            position: absolute;
+            bottom: 50%;
+            left: 50%;
+            transform-origin: 50% 100%;
+            border-radius: 0.5rem;
+        }
+        
+        .hour-hand {
+            width: 0.3rem;
+            height: 1.5rem;
+            background-color: var(--text-color);
+            transform: translateX(-50%);
+        }
+        
+        .minute-hand {
+            width: 0.2rem;
+            height: 2rem;
+            background-color: var(--text-color);
+            transform: translateX(-50%);
+        }
+        
+        .second-hand {
+            width: 0.1rem;
+            height: 2.5rem;
+            background-color: var(--primary-color);
+            transform: translateX(-50%);
+        }
+        
+        .digital-clock {
+            background-color: rgba(0, 0, 0, 0.7);
+            padding: 0.3rem 0.8rem;
+            border-radius: 0.5rem;
+            font-size: 0.9rem;
+            font-weight: 500;
+        }
+        
+        .crypto-widget {
+            position: fixed;
+            top: 10rem;
+            left: 1.5rem;
+            background: rgba(26, 26, 26, 0.8);
+            border: 1px solid var(--primary-color);
+            border-radius: 0.8rem;
+            padding: 1rem;
+            width: 16rem;
+            box-shadow: var(--shadow);
+            -webkit-backdrop-filter: blur(5px);
+            backdrop-filter: blur(5px);
+            z-index: 5;
+            transition: var(--transition);
+        }
+        
+        .crypto-widget:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 10px 20px rgba(255, 215, 0, 0.3);
+        }
+        
+        .crypto-widget h3 {
+            color: var(--primary-color);
+            margin-bottom: 1rem;
+            font-size: 1.2rem;
+            text-align: center;
+        }
+        
+        .crypto-item {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding: 0.5rem 0;
+        }
+        
+        .crypto-name {
+            display: flex;
+            align-items: center;
+            gap: 0.5rem;
+        }
+        
+        .crypto-icon {
+            width: 1.5rem;
+            height: 1.5rem;
+            object-fit: contain;
+        }
+        
+        .crypto-price {
+            font-weight: 700;
+        }
+        
+        .positive { color: #4CAF50; }
+        .negative { color: #F44336; }
+        
+        .main-content {
+            max-width: 800px;
+            margin: 2rem auto;
+            padding: 2rem;
+            background: rgba(26, 26, 26, 0.7);
+            border-radius: 1rem;
+            border: 1px solid rgba(255, 215, 0, 0.2);
+            box-shadow: var(--shadow);
+            -webkit-backdrop-filter: blur(5px);
+            backdrop-filter: blur(5px);
+            position: relative;
+            z-index: 1;
+            opacity: 0;
+            transform: translateY(20px);
+            transition: opacity 0.5s ease, transform 0.5s ease;
+        }
+        
+        .main-content.visible {
+            opacity: 1;
+            transform: translateY(0);
+        }
+        
+        .main-content h2 {
+            color: var(--primary-color);
+            margin-bottom: 1.5rem;
+            font-size: 1.8rem;
+            text-align: center;
+        }
+        
+        .news-ticker {
+            position: fixed;
+            bottom: 1rem;
+            right: 1rem;
+            width: 20rem;
+            max-height: 8rem;
+            background-color: rgba(0, 0, 0, 0.8);
+            border: 1px solid var(--primary-color);
+            border-radius: 0.8rem;
+            padding: 1rem;
+            overflow-y: auto;
+            box-shadow: var(--shadow);
+            z-index: 5;
+            opacity: 0;
+            transform: translateY(20px);
+            transition: opacity 0.5s ease, transform 0.5s ease;
+        }
+        
+        .news-ticker.visible {
+            opacity: 1;
+            transform: translateY(0);
+        }
+        
+        .news-ticker h3 {
+            color: var(--primary-color);
+            margin-bottom: 0.8rem;
+            font-size: 1.1rem;
+            display: flex;
+            align-items: center;
+            gap: 0.5rem;
+        }
+        
+        .news-item {
+            padding: 0.5rem 0;
+        }
+        
+        footer {
+            background-color: rgba(26, 26, 26, 0.9);
+            color: var(--text-color);
+            text-align: center;
+            padding: 1.5rem;
+            margin-top: 2rem;
+            border-top: 1px solid rgba(255, 215, 0, 0.2);
+        }
+        
+        .social-links a {
+            color: var(--text-color);
+            font-size: 1.5rem;
+            margin: 0 0.75rem;
+            transition: var(--transition);
+        }
+        
+        .social-links a:hover {
+            color: var(--primary-color);
+            transform: translateY(-3px);
+        }
+        
+        .copyright {
+            font-size: 0.9rem;
+            opacity: 0.8;
+            margin-top: 1rem;
+        }
+        
+        .back-to-top {
+            position: fixed;
+            bottom: 5rem;
+            right: 1.5rem;
+            width: 3rem;
+            height: 3rem;
+            background-color: var(--primary-color);
+            color: #000;
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 1.5rem;
+            cursor: pointer;
+            opacity: 0;
+            visibility: hidden;
+            transition: var(--transition);
+            z-index: 10;
+            box-shadow: 0 0 10px rgba(255, 215, 0, 0.7);
+        }
+        
+        .back-to-top.visible {
+            opacity: 0.8;
+            visibility: visible;
+        }
+        
+        .back-to-top:hover {
+            opacity: 1;
+            transform: translateY(-5px);
+        }
+        
+        @keyframes pulse {
+            0% { box-shadow: 0 0 0 0 rgba(255, 215, 0, 0.7); }
+            70% { box-shadow: 0 0 0 10px rgba(255, 215, 0, 0); }
+            100% { box-shadow: 0 0 0 0 rgba(255, 215, 0, 0); }
+        }
+        
+        @media (max-width: 768px) {
+            .crypto-widget, .news-ticker {
+                position: static;
+                width: 100%;
+                max-width: 400px;
+                margin: 1.5rem auto;
+            }
+            
+            .clock-container {
+                position: static;
+                margin: 1rem auto;
+                width: fit-content;
+            }
+            
+            .azadi-monument, .right-side {
+                display: none;
+            }
+            
+            body.menu-open {
+                overflow: hidden;
+            }
+        }
+        
+        @media (max-width: 576px) {
+            .logo { font-size: 2rem; }
+            .subtitle { font-size: 0.9rem; }
+            .main-menu { width: 250px; }
+            .main-content { margin: 1rem; padding: 1rem; }
+            .main-content h2 { font-size: 1.5rem; }
+        }
+    </style>
+</head>
+<body>
+    <div class="stars"></div>
+    
+    <div class="azadi-monument" aria-label="نماد برج آزادی">
+        <i class="fas fa-monument"></i>
+    </div>
+    
+    <div class="right-side">
+        <div class="side-clock" id="sideClock"></div>
+        <div class="irx-logo">IRX</div>
+    </div>
+    
+    <header>
+        <div class="logo">IRX</div>
+        <div class="subtitle">انقلاب مالی ایران - قدرتمندترین پول دنیا</div>
+    </header>
+    
+    <div class="menu-toggle" id="menuToggle" role="button" aria-label="باز کردن منو">
+        <span></span>
+        <span></span>
+        <span></span>
+    </div>
+    
+    <nav class="main-menu" id="mainMenu" role="navigation">
+        <a href="#home"><i class="fas fa-home"></i> خانه</a>
+        <a href="#about"><i class="fas fa-info-circle"></i> درباره ما</a>
+        <a href="#irx"><i class="fas fa-coins"></i> پروژه IRX</a>
+        <a href="#roadmap"><i class="fas fa-map-marked-alt"></i> نقشه راه</a>
+        <a href="#team"><i class="fas fa-users"></i> تیم ما</a>
+        <a href="#contact"><i class="fas fa-envelope"></i> تماس با ما</a>
+        <a href="#faq"><i class="fas fa-question-circle"></i> سوالات متداول</a>
+    </nav>
+    
+    <div class="clock-container">
+        <div class="analog-clock">
+            <div class="clock-hand hour-hand" id="hourHand"></div>
+            <div class="clock-hand minute-hand" id="minuteHand"></div>
+            <div class="clock-hand second-hand" id="secondHand"></div>
+        </div>
+        <div class="digital-clock" id="digitalClock"></div>
+    </div>
+    
+    <div class="crypto-widget">
+        <h3><i class="fas fa-chart-line"></i> قیمت ارزهای دیجیتال</h3>
+        <div class="crypto-item">
+            <div class="crypto-name">
+                <img src="https://cryptologos.cc/logos/bitcoin-btc-logo.png" alt="Bitcoin" class="crypto-icon" loading="lazy">
+                <span>بیت‌کوین</span>
+            </div>
+            <div class="crypto-price" id="btcPrice">در حال بارگذاری...</div>
+        </div>
+        <div class="crypto-item">
+            <div class="crypto-name">
+                <img src="https://cryptologos.cc/logos/ethereum-eth-logo.png" alt="Ethereum" class="crypto-icon" loading="lazy">
+                <span>اتریوم</span>
+            </div>
+            <div class="crypto-price" id="ethPrice">در حال بارگذاری...</div>
+        </div>
+        <div class="crypto-item">
+            <div class="crypto-name">
+                <img src="https://cryptologos.cc/logos/litecoin-ltc-logo.png" alt="Litecoin" class="crypto-icon" loading="lazy">
+                <span>لایت‌کوین</span>
+            </div>
+            <div class="crypto-price" id="ltcPrice">در حال بارگذاری...</div>
+        </div>
+        <div class="crypto-item">
+            <div class="crypto-name">
+                <i class="fas fa-star crypto-icon" style="color: var(--primary-color);"></i>
+                <span>IRX</span>
+            </div>
+            <div class="crypto-price" style="color: var(--primary-color);">0.85 دلار (تستی)</div>
+        </div>
+    </div>
+    
+    <main class="main-content" id="home">
+        <h2>پروژه IRX چیست؟</h2>
+        <p>پروژه IRX یک ابتکار انقلابی در حوزه مالی ایران است که با هدف تقویت و قدرتمند کردن ریال ایران در سطح جهانی طراحی شده است.</p>
+        <p>این پروژه با ترکیب فناوری‌های نوین بلاکچین و سیستم‌های مالی سنتی، به دنبال ایجاد تحولی اساسی در اقتصاد ایران است.</p>
+    </main>
+    
+    <div class="news-ticker">
+        <h3><i class="fas fa-newspaper"></i> آخرین اخبار</h3>
+        <div class="news-item"><strong>توسعه پروژه IRX:</strong> فاز اول توسعه پلتفرم با موفقیت به پایان رسید.</div>
+        <div class="news-item"><strong>همکاری‌های بین‌المللی:</strong> مذاکرات با چندین کشور برای پذیرش IRX در جریان است.</div>
+        <div class="news-item"><strong>اقتصاد ایران:</strong> رشد چشمگیر صادرات غیرنفتی در سه ماهه اخیر.</div>
+    </div>
+    
+    <div class="back-to-top" id="backToTop" role="button" aria-label="بازگشت به بالا">
+        <i class="fas fa-arrow-up"></i>
+    </div>
+    
+    <footer>
+        <div class="social-links">
+            <a href="#" aria-label="تلگرام"><i class="fab fa-telegram"></i></a>
+            <a href="#" aria-label="توییتر"><i class="fab fa-twitter"></i></a>
+            <a href="#" aria-label="اینستاگرام"><i class="fab fa-instagram"></i></a>
+        </div>
+        <div class="copyright">© 2025 پروژه IRX - تمامی حقوق محفوظ است</div>
+    </footer>
+    
+    <script>
+        // منوی همبرگری
+        const menuToggle = document.getElementById('menuToggle');
+        const mainMenu = document.getElementById('mainMenu');
+        
+        menuToggle.addEventListener('click', () => {
+            menuToggle.classList.toggle('active');
+            mainMenu.classList.toggle('active');
+            document.body.classList.toggle('menu-open');
+        });
+        
+        document.addEventListener('click', (e) => {
+            if (!mainMenu.contains(e.target) && !menuToggle.contains(e.target)) {
+                menuToggle.classList.remove('active');
+                mainMenu.classList.remove('active');
+                document.body.classList.remove('menu-open');
+            }
+        });
+        
+        // ساعت آنالوگ و دیجیتال
+        function updateClock() {
+            const now = new Date();
+            const hours = now.getHours();
+            const minutes = now.getMinutes();
+            const seconds = now.getSeconds();
+            
+            const hourDeg = (hours % 12) * 30 + (minutes / 2) + (seconds / 120);
+            const minuteDeg = minutes * 6 + (seconds / 10);
+            const secondDeg = seconds * 6;
+            
+            document.getElementById('hourHand').style.transform = `rotate(${hourDeg}deg)`;
+            document.getElementById('minuteHand').style.transform = `rotate(${minuteDeg}deg)`;
+            document.getElementById('secondHand').style.transform = `rotate(${secondDeg}deg)`;
+            
+            const formattedTime = `${hours.toString().padStart(2, '0')}:${minutes.toString().padStart(2, '0')}:${seconds.toString().padStart(2, '0')}`;
+            document.getElementById('digitalClock').textContent = formattedTime;
+            document.getElementById('sideClock').textContent = formattedTime;
+        }
+        
+        setInterval(updateClock, 1000);
+        updateClock();
+        
+        // دریافت قیمت ارزهای دیجیتال
+        async function fetchCryptoPrices() {
+            try {
+                const response = await fetch('https://api.coingecko.com/api/v3/simple/price?ids=bitcoin,ethereum,litecoin&vs_currencies=usd&include_24hr_change=true');
+                const data = await response.json();
+                
+                document.getElementById('btcPrice').textContent = `$${data.bitcoin.usd.toLocaleString()}`;
+                document.getElementById('ethPrice').textContent = `$${data.ethereum.usd.toLocaleString()}`;
+                document.getElementById('ltcPrice').textContent = `$${data.litecoin.usd.toLocaleString()}`;
+                
+                document.getElementById('btcPrice').classList.toggle('positive', data.bitcoin.usd_24h_change > 0);
+                document.getElementById('btcPrice').classList.toggle('negative', data.bitcoin.usd_24h_change < 0);
+                document.getElementById('ethPrice').classList.toggle('positive', data.ethereum.usd_24h_change > 0);
+                document.getElementById('ethPrice').classList.toggle('negative', data.ethereum.usd_24h_change < 0);
+                document.getElementById('ltcPrice').classList.toggle('positive', data.litecoin.usd_24h_change > 0);
+                document.getElementById('ltcPrice').classList.toggle('negative', data.litecoin.usd_24h_change < 0);
+            } catch (error) {
+                console.error('خطا در دریافت قیمت‌ها:', error);
+                document.getElementById('btcPrice').textContent = 'دریافت نشد';
+                document.getElementById('ethPrice').textContent = 'دریافت نشد';
+                document.getElementById('ltcPrice').textContent = 'دریافت نشد';
+            }
+        }
+        
+        fetchCryptoPrices();
+        setInterval(fetchCryptoPrices, 30000); // هر 30 ثانیه
+        
+        // دکمه بازگشت به بالا
+        const backToTop = document.getElementById('backToTop');
+        window.addEventListener('scroll', () => {
+            backToTop.classList.toggle('visible', window.scrollY > 300);
+        });
+        
+        backToTop.addEventListener('click', () => {
+            window.scrollTo({ top: 0, behavior: 'smooth' });
+        });
+        
+        // اسکرول نرم
+        document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+            anchor.addEventListener('click', function(e) {
+                e.preventDefault();
+                const targetId = this.getAttribute('href');
+                if (targetId === '#') return;
+                
+                const targetElement = document.querySelector(targetId);
+                if (targetElement) {
+                    targetElement.scrollIntoView({ behavior: 'smooth' });
+                    menuToggle.classList.remove('active');
+                    mainMenu.classList.remove('active');
+                    document.body.classList.remove('menu-open');
+                }
+            });
+        });
+        
+        // انیمیشن اسکرول
+        function animateOnScroll() {
+            const elements = document.querySelectorAll('.main-content, .crypto-widget, .news-ticker');
+            const screenPosition = window.innerHeight * 0.8;
+            
+            elements.forEach(element => {
+                const elementPosition = element.getBoundingClientRect().top;
+                if (elementPosition < screenPosition) {
+                    element.classList.add('visible');
+                }
+            });
+        }
+        
+        window.addEventListener('scroll', animateOnScroll);
+        window.addEventListener('load', animateOnScroll);
+    </script>
+</body>
+</html>
